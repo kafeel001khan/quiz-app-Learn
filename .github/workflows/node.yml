@@ -50,13 +50,3 @@ jobs:
         echo "Start Time: $(date)"
         echo "Action Link: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/$GITHUB_RUN_ID"
 
-    - name: Total Time
-      id: total-time
-      run: echo "End Time: $(date)"
-
-    - name: Calculate Total Time
-      run: |
-        start_time=$(date -d "$(echo "${{ steps.display-info.outputs.start_time }}" | tr -d '\n')" '+%s')
-        end_time=$(date -d "$(echo "${{ steps.total-time.outputs.end_time }}" | tr -d '\n')" '+%s')
-        total_time=$(expr $end_time - $start_time)
-        echo "Total Time: $((total_time / 60)) minutes and $((total_time % 60)) seconds"
