@@ -28,7 +28,8 @@ jobs:
       run: npm test  # Adjust this if your project has a different test script
 
     - name: Zip Build Folder
-      run: zip -r build.zip . -i quiz-app-Learn/build
+      #run: zip -r build.zip . -i quiz-app-Learn/build
+      run: zip -r build.zip ${GITHUB_REPOSITORY##*/}/build
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
