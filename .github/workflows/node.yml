@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,11 +27,11 @@ jobs:
     - name: Test
       run: npm test  # Adjust this if your project has a different test script
 
-    - name: Download Artifacts
-      uses: actions/download-artifact@v3
+    - name: Zip Build Folder
+      run: zip -r build.zip quiz-app-Learn/build
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
       with:
         name: my-artifact
-        path: quiz-app-Learn/build
-
-    
-
+        path: build.zip
