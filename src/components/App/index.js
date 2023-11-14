@@ -20,7 +20,7 @@ const App = () => {
   const startQuiz = (data, countdownTime) => {
     setLoading(true);
     setLoadingMessage({
-      title: 'Loading your quiz...',
+      title: 'Loading your Quiz...',
       message: "It won't be long!",
     });
     setCountdownTime(countdownTime);
