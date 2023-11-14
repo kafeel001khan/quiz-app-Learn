@@ -27,6 +27,10 @@ jobs:
     - name: Test
       run: npm test  # Adjust this if your project has a different test script
 
+    - name: List contents of directory
+      run: ls quiz-app-Learn/build
+
+
     - name: Zip Build Folder
       #run: zip -r build.zip . -i quiz-app-Learn/build
       run: zip -r build.zip ${GITHUB_REPOSITORY##*/}/build
