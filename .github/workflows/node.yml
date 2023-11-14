@@ -38,3 +38,10 @@ jobs:
       with:
         name: my-artifact
         path: build.zip
+
+    - name: Display Repo Name, User, Time, and Action Link
+      run: |
+        echo "Repo Name: $GITHUB_REPOSITORY"
+        echo "Triggered by: $GITHUB_ACTOR"
+        echo "Time: $(date)"
+        echo "Action Link: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
