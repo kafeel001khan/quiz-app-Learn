@@ -30,10 +30,8 @@ jobs:
     - name: List contents of directory
       run: ls 
 
-
     - name: Zip Build Folder
-      #run: zip -r build.zip . -i quiz-app-Learn/build
-      run: zip -r build.zip ${GITHUB_REPOSITORY##*/}/build
+      run: zip -r build.zip build
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
