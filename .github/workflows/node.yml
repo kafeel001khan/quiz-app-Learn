@@ -28,7 +28,7 @@ jobs:
       run: npm test  # Adjust this if your project has a different test script
 
     - name: List contents of directory
-      run: ls quiz-app-Learn/build
+      run: ls 
 
 
     - name: Zip Build Folder
